@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#111;
+  font-family:sans-serif;
+}
+
+/* GRID */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  padding:8px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.gallery img:active{
+  transform:scale(0.96);
+}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:95%;
+  max-height:85%;
+  margin:auto;
+  display:block;
+  margin-top:60px;
+}
+
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  color:white;
+  font-size:35px;
+  cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="gallery">
+
+  <img src="https://i.postimg.cc/SxhzydyL/IMG-4874.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/fRfSkdLj/IMG-4857.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/x13NqmCK/IMG-4837.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/y8HSVjVj/IMG-6042.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/3xF0WGRj/IMG-4907.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/7ZnJbz69/IMG-4965.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/3xF0WGRz/IMG-4855.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/2S7L3Wyp/IMG-4769.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/Z5xv0Nnh/IMG-4831.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/W1wqtZzv/IMG-4850.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/5t9YztYG/IMG-4789.jpg" onclick="openImg(this.src)">
+  <img src="https://i.postimg.cc/jjqwfjn0/IMG-6041.jpg" onclick="openImg(this.src)">
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeImg()">×</span>
+  <img id="popup">
+</div>
+
+<script>
+function openImg(src){
+  document.getElementById("lightbox").style.display="block";
+  document.getElementById("popup").src=src;
+}
+
+function closeImg(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>
