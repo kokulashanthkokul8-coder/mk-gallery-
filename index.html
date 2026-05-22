@@ -12,14 +12,18 @@ body{
 
 /* GRID */
 .gallery{
-  display:grid;
+  display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
   grid-template-columns:repeat(3,1fr);
   gap:6px;
   padding:8px;
 }
 
 .gallery img{
-  width:100%;
+  width:90%;
+flex-shrink:0;
+scroll-snap-align:center;
   border-radius:8px;
   cursor:pointer;
   transition:0.2s;
